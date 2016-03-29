@@ -1648,9 +1648,9 @@ webserver_recv(void *arg, char *pusrdata, unsigned short length)
         		
         		silder3_num = silder3_num * 22;
 
-        		pwm_set_duty(silder1_num, 0);
+        		pwm_set_duty(silder1_num, 3);
         		
-        		pwm_set_duty(silder2_num, 1);
+        		pwm_set_duty(silder2_num, 0);
         	
         		pwm_set_duty(silder3_num, 2);
 	
@@ -1938,7 +1938,7 @@ user_webserver_init(uint32 port)
 	os_memset( ap_config.ssid, 0, 32 );
 	os_memset( ap_config.password, 0, 64 );
 
-	os_strcpy( ap_config.ssid, "test" );
+	os_strcpy( ap_config.ssid, "ESP_Cerevo" );
 
     ap_config.ssid_len = os_strlen( ap_config.ssid );
 
