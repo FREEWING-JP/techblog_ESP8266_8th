@@ -62,24 +62,7 @@ void user_init(void)
 	pwm_set_duty(10000, 0);
 	
 	pwm_start();
-	/*
-		user_light_init();
-	user_light_set_period(1000);
-	user_light_restart();
-	
-	for(;;){
-		num++;
-		
-		if(num >= 22222){
-			num = 0;
-		}
-		
-		user_light_set_duty(num, 0);
-		pwm_start();
-		
-		os_delay_us(100);
-	}
-	*/
+
 	
 }
 
