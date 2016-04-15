@@ -1,57 +1,64 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<title>ESP Slider</title>
+    <meta charset="utf-8"/>
+    <title>ESP Slider</title>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-	function getEl(id) { return document.getElementById(id); };
-	
-	function postVal() {
-	   updateVal();
-	   getEl('form').submit();
-	};
-	
-	function updateVal() {
-	    getEl('value1').innerHTML=getEl('slider1').value;
-	    getEl('value2').innerHTML=getEl('slider2').value;
-	    getEl('value3').innerHTML=getEl('slider3').value;
-	}
-	
-window.onload=updateVal;
-</script>
+        function getEl(id) {
+            return document.getElementById(id);
+        }
+
+        function postVal() {
+            updateVal();
+            getEl('form').submit();
+        }
+
+        function updateVal() {
+            getEl('value1').innerHTML = getEl('slider1').value;
+            getEl('value2').innerHTML = getEl('slider2').value;
+            getEl('value3').innerHTML = getEl('slider3').value;
+        }
+
+        window.onload = updateVal;
+    </script>
 </head>
 <body>
 
-	<form action="" target="tif" id=form method="POST">
+<form action="" target="tif" id=form method="POST">
 
+    <div style="text-align:center; line-height:1em;">
+        <font size="12">
 
-	<div style="text-align:center; line-height:1em;">
-	<font size="12	">
+            <p>
+                <label for="slider1">Vol1:</label>
+                <div id="value1"></div>
+            </p>
+            <input type="range" id="slider1" style="width:400px; height: 100px" min="0" max="1023" value="512"
+                   onchange="postVal()" name="slider1"/>
 
-	<p>
-	<label for=amount1>Vol1:</label><div id="value1"></div>
-	</p>
-	<input type=range id="slider1" style="width:400px; height: 100px"; min="0" max="1023" value="512" onchange="postVal()"; name="slider1"/>
+            <p>
+                <label for="slider2">Vol2:</label>
+                <div id="value2"></div>
+            </p>
+            <input type=range id=slider2 style="width:400px; height: 100px" min="0" max="1023" value="512"
+                   onchange="postVal()" name="slider2"/>
 
-	<p>
-	<label for=amount2>Vol2:</label><div id="value2"></div>
-	</p>
-	<input type=range id=slider2 style="width:400px; height: 100px"; min=""0 max="1023" value="512" onchange="postVal()"; name="slider2"/>
+            <p>
+                <label for="slider3">Vol3:</label>
+                <div id="value3"></div>
+            </p>
 
-	<p>
-	<label for=amount3>Vol3:</label><div id="value3"></div>
-	</p>
+            <input type="range" id="slider3" style="width:400px; height: 100px" min="0" max="1023" value="512"
+                   onchange="postVal()" name="slider3"/>
+        </font>
 
-	<input type=range id="slider3" style="width:400px; height: 100px"; min="0" max="1023" value="512" onchange="postVal()"; name="slider3"/>
-	</font>
+        <input type="hidden" name="hoge" value="fuga"/>
+    </div>
+    <iframe src="javascript: false" style="display: none" name="tif" id="tif"></iframe>
 
-	<input type=hidden name="hoge" value="fuga"/>
-	</div>
-	<iframe src="javascript: false"; style="display: none"; name="tif" id="tif"></iframe>
+</form>
 
-	</form>
-
-	</body>
+</body>
 </html>
